@@ -58,7 +58,7 @@ final class QrReader
             if (!$im instanceof \Imagick) {
                 throw new \InvalidArgumentException('Invalid image source.');
             }
-            $im->scaleImage(100, 100, true);
+            $im->scaleImage(600, 800, true);
             $width  = $im->getImageWidth();
             $height = $im->getImageHeight();
             $source = new IMagickLuminanceSource($im, $width, $height);
@@ -66,7 +66,7 @@ final class QrReader
             if (!is_resource($im)) {
                 throw new \InvalidArgumentException('Invalid image source.');
             }
-            $im = imagescale($im, 100);
+            $im = imagescale($im, 600);
             $width  = imagesx($im);
             $height = imagesy($im);
             $source = new GDLuminanceSource($im, $width, $height);
